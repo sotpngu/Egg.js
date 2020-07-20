@@ -2,7 +2,7 @@
  * @Author: gaominghao
  * @Date: 2020-07-17 14:33:38
  * @LastEditors: gaominghao
- * @LastEditTime: 2020-07-20 16:28:29
+ * @LastEditTime: 2020-07-20 19:53:51
  * @Description: none
  */
 /* eslint valid-jsdoc: "off" */
@@ -56,6 +56,13 @@ module.exports = appInfo => {
   config.gzip = {
     threshold: 1024, // 小于 1k 的响应体不压缩
   };
+
+  // 关闭post请求安全
+  config.security = {
+    csrf: {
+      enable: false
+    }
+  }
 
   // add your user config here
   const userConfig = {

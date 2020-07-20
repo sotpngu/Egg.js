@@ -2,7 +2,7 @@
  * @Author: gaominghao
  * @Date: 2020-07-17 14:33:38
  * @LastEditors: gaominghao
- * @LastEditTime: 2020-07-20 14:53:17
+ * @LastEditTime: 2020-07-20 19:44:21
  * @Description: none
  */ 
 'use strict';
@@ -46,4 +46,18 @@ module.exports = app => {
   router.get('/', controller.home.index);
   // news
   router.get('/news', controller.news.list);
+  /* 
+   * router
+   */
+  // Query String 方式
+  router.get('/search', controller.search.index);
+  // 参数命名方式
+  router.get('/user/:id/:name', controller.user.info);
+  // 复杂参数的获取：路由里面也支持定义正则，可以更加灵活的获取参数：
+  // 请求：/package/egg/1.0.0
+  router.get(/^\/package\/([\w-.]+\/[\w-.]+)$/, controller.package.detail);
+  // 表单内容获取
+  router.get('/formIndex', controller.form.index)
+  router.post('/form', controller.form.post);
+  
 };
