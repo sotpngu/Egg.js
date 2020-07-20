@@ -7,8 +7,9 @@
     <ul class="news-view view">
       {% for item in list %}
         <li class="item">
-          <a href="{{ item.url }}">{{ item.title }}</a>
-          <span>{{ helper.relativeTime(item.time) }}</span>
+          <a href="{{ item.url }}">{{ item.name }}</a>
+          <span>{{ item.artists[0].name }}</span>
+          <span>{{ helper.relativeTime(item.album.publishTime) }}</span>
         </li>
       {% endfor %}
     </ul>

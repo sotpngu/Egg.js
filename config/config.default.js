@@ -2,7 +2,7 @@
  * @Author: gaominghao
  * @Date: 2020-07-17 14:33:38
  * @LastEditors: gaominghao
- * @LastEditTime: 2020-07-20 11:05:15
+ * @LastEditTime: 2020-07-20 13:29:23
  * @Description: none
  */
 /* eslint valid-jsdoc: "off" */
@@ -33,7 +33,7 @@ module.exports = appInfo => {
   // 添加 news 的配置项
   config.news = {
     pageSize: 5,
-    serverUrl: 'https://hacker-news.firebaseio.com/v0',
+    serverUrl: 'http://localhost:3000',
   };
 
   // add middleware robot
