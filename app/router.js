@@ -2,7 +2,7 @@
  * @Author: gaominghao
  * @Date: 2020-07-17 14:33:38
  * @LastEditors: gaominghao
- * @LastEditTime: 2020-07-20 14:47:03
+ * @LastEditTime: 2020-07-20 14:53:17
  * @Description: none
  */ 
 'use strict';
@@ -22,6 +22,8 @@ module.exports = app => {
   app.on('error', (err, ctx) => {
     // report error
     console.log('发生错误：', err);
+    // 记录错误日志
+    app.logger.error(new Error(err));
   });
 
   // 应用收到请求和响应请求时，分别会触发 request 和 response 事件，并将当前请求上下文暴露出来，开发者可以监听这两个事件来进行日志记录。
