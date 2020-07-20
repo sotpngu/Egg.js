@@ -2,7 +2,7 @@
  * @Author: gaominghao
  * @Date: 2020-07-17 14:33:38
  * @LastEditors: gaominghao
- * @LastEditTime: 2020-07-20 13:29:23
+ * @LastEditTime: 2020-07-20 16:28:29
  * @Description: none
  */
 /* eslint valid-jsdoc: "off" */
@@ -36,15 +36,25 @@ module.exports = appInfo => {
     serverUrl: 'http://localhost:3000',
   };
 
-  // add middleware robot
+  // 中间件
+  // 中间件通用配置：
+  //  enable：控制中间件是否开启。
+  //  match：设置只有符合某些规则的请求才会经过这个中间件。
+  //  ignore：设置符合某些规则的请求不经过这个中间件。
   config.middleware = [
-    'robot'
+    'robot', // 检查是否是百度爬虫请求
+    'gzip', //把请求体打包成压缩包 
   ];
+  // 中间件配置文件
   // robot's configurations
   config.robot = {
     ua: [
       /Baiduspider/i,
     ]
+  };
+  // 配置 gzip 中间件的配置
+  config.gzip = {
+    threshold: 1024, // 小于 1k 的响应体不压缩
   };
 
   // add your user config here
