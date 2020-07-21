@@ -2,7 +2,7 @@
  * @Author: gaominghao
  * @Date: 2020-07-17 14:33:38
  * @LastEditors: gaominghao
- * @LastEditTime: 2020-07-21 10:35:25
+ * @LastEditTime: 2020-07-21 10:57:59
  * @Description: none
  */ 
 'use strict';
@@ -50,5 +50,9 @@ module.exports = app => {
   require('./router/request')(app);
   require('./router/redirect')(app);
   require('./router/uppercase')(app);
+
+
+  router.post('createPost', '/api/posts', controller.post.create);
+  // curl -X POST http://127.0.0.1:7001/api/posts --data 'title=头条新闻&content=及时讯触手可及'
   
 };

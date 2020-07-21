@@ -2,7 +2,7 @@
  * @Author: gaominghao
  * @Date: 2020-07-20 15:58:00
  * @LastEditors: gaominghao
- * @LastEditTime: 2020-07-20 16:25:28
+ * @LastEditTime: 2020-07-21 10:59:19
  * @Description: none
  */
 
@@ -15,11 +15,10 @@ module.exports = options => { // （对中间件进行配置）
 
     // 后续中间件执行完后将响应体转换成gzip
     let body = ctx.body;
-    console.log(body)
     if (!body) return;
 
-    console.log(options.threshold)
-    console.log(ctx.length)
+    // console.log(options.threshold)
+    // console.log(ctx.length)
     // 支持 options.threshold（对中间件进行配置）
     if (options.threshold && ctx.length < options.threshold) return;
 
