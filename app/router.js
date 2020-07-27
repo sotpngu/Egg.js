@@ -1,8 +1,8 @@
 /*
  * @Author: gaominghao
  * @Date: 2020-07-17 14:33:38
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-07-23 00:18:36
+ * @LastEditors: gaominghao
+ * @LastEditTime: 2020-07-24 16:10:30
  * @Description: none
  */ 
 'use strict';
@@ -56,6 +56,11 @@ module.exports = app => {
   // curl -X POST http://127.0.0.1:7001/api/posts --data 'title=头条新闻&content=及时讯触手可及'`
 
   // 自定义Controller基类
-  router.get('baseInheritController', '/baseInheritController', controller.baseInherit.list)
+  router.get('baseInheritController', '/baseInheritController', controller.baseInherit.list);
+
+  // 上传文件页面
+  router.get('/uploadFiles', controller.upload.uploadFiles);
+  // 接受文件
+  router.post('/upload', controller.upload.upload);
   
 };

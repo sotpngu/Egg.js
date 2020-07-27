@@ -2,7 +2,7 @@
  * @Author: gaominghao
  * @Date: 2020-07-17 14:33:38
  * @LastEditors: gaominghao
- * @LastEditTime: 2020-07-20 19:53:51
+ * @LastEditTime: 2020-07-24 15:52:17
  * @Description: none
  */
 /* eslint valid-jsdoc: "off" */
@@ -62,6 +62,11 @@ module.exports = appInfo => {
     csrf: {
       enable: false
     }
+  }
+
+  // File模式
+  config.multipart = {
+    mode: 'file'
   }
 
   // add your user config here
