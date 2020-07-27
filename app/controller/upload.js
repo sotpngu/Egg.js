@@ -2,7 +2,7 @@
  * @Author: gaominghao
  * @Date: 2020-07-24 15:54:14
  * @LastEditors: gaominghao
- * @LastEditTime: 2020-07-24 16:14:10
+ * @LastEditTime: 2020-07-27 09:35:03
  * @Description: none
  */ 
 const Controller = require('egg').Controller;
@@ -26,7 +26,7 @@ class uploadController extends Controller {
     console.log(name)
     console.log(file.filepath)
     try {
-      result = await ctx.oss.put(name, file.filepath);
+      result = await ctss.put(name, file.filepath);
     } finally {
       await fs.unlink(file.filepath);
     }
